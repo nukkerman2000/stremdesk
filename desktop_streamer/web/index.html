@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StremDesk</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow">REMOTE DESKTOP / LOW LATENCY</p>
+        <h1>StremDesk</h1>
+      </div>
+      <div class="state" id="state"><span class="dot"></span><span id="stateText">Подключение</span></div>
+    </header>
+    <section class="viewer-card">
+      <video id="screen" src="/vlc.mp4" autoplay muted playsinline controls></video>
+      <div class="empty" id="empty">
+        <div class="placeholder-card">
+          <img id="splashImage" src="/placeholder.svg" alt="">
+          <strong id="emptyTitle">Ожидание трансляции</strong>
+          <span id="emptyText">Сервер работает. Экран появится с первым кадром.</span>
+        </div>
+      </div>
+    </section>
+    <section class="info-grid">
+      <div class="info"><span data-i18n="encoder_label">Кодировщик</span><strong id="encoder">—</strong></div>
+      <div class="info"><span data-i18n="latency_label">Задержка буфера</span><strong id="latency">—</strong></div>
+      <div class="info"><span data-i18n="clients_label">Клиенты</span><strong id="clients">—</strong></div>
+      <div class="actions">
+        <button id="fullscreen" type="button" data-i18n="fullscreen">Во весь экран</button>
+        <button id="reconnect" class="secondary" type="button" data-i18n="reconnect">Переподключить</button>
+        <button id="sound" type="button" data-i18n="sound_off">Включить звук</button>
+      </div>
+    </section>
+    <section class="vlc-card">
+      <div>
+        <p class="eyebrow" data-i18n="external_player">EXTERNAL PLAYER</p>
+        <h2 data-i18n="vlc_title">Поток для VLC</h2>
+      </div>
+      <a id="vlcLink" href="#" target="_blank" rel="noreferrer" data-i18n="vlc_open">Открыть URL потока</a>
+      <code id="vlcUrl">—</code>
+    </section>
+    <p class="hint" data-i18n="hint">Если браузер не запускает звук, нажмите Play. Для VLC используйте ссылку выше; токен уже встроен.</p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
